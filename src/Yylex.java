@@ -816,7 +816,7 @@ class Yylex implements ParserTokens {
             // fall through
           case 45: break;
           case 14:
-            { yyparser.yylval = new ParserVal(LTE); return GT;
+            { yyparser.yylval = new ParserVal(GT); return GT;
             }
             // fall through
           case 46: break;
@@ -853,22 +853,22 @@ class Yylex implements ParserTokens {
             // fall through
           case 52: break;
           case 21:
-            { yyparser.yylval = new ParserVal(LTE); return NOTEQ;
+            { yyparser.yylval = new ParserVal(NOTEQ); return NOTEQ;
             }
             // fall through
           case 53: break;
           case 22:
-            { yyparser.yylval = new ParserVal(LTE); return LTE;
+            { yyparser.yylval = new ParserVal(LT); return LTE;
             }
             // fall through
           case 54: break;
           case 23:
-            { yyparser.yylval = new ParserVal(LTE); return EQ;
+            { yyparser.yylval = new ParserVal(EQ); return EQ;
             }
             // fall through
           case 55: break;
           case 24:
-            { yyparser.yylval = new ParserVal(LTE); return GTE;
+            { yyparser.yylval = new ParserVal(GTE); return GTE;
             }
             // fall through
           case 56: break;

@@ -16,6 +16,7 @@
 	<property name="bad.dir" location="../bad" />
 	<property name="test.dir" location="../test" />
 	<property name="runtime.dir" location="../runtime" />
+	<property name="reference.dir" location="../reference" />
 	
 	<!-- info about setting auto-refresh -->
 	<target name="How-To-Auto-Refresh">
@@ -104,6 +105,31 @@
         </java>
     </target>
 	
+	<target name="gen-jasmin">
+		<basename property="filename" file="${filename.java}" suffix=".java"/>
+		<echo message="Generating jasmin assembly code for ${filename}.java"/>
+		<echo message="First, compiling ${filename}.java to ${filename}.class"/>
+		<javac srcdir="${reference.dir}" destdir="${reference.dir}" includes="Main.java" includeantruntime="false"/>
+		<echo message="Next, generating ${filename}.j from ${filename}.class"/>
+		<java jar="${reference.dir}/Jasper.jar" fork="true" failonerror="true" dir="${reference.dir}" maxmemory="128m">
+			<arg value="${filename}.class"/>
+		</java>
+		<echo message="View ${reference.dir}/${filename}.j"/>
+	</target>
+	<!-- ========================================= -->
+	<!--  Generate Targets                         -->
+	<!-- ========================================= -->
+	<!--  generate jasmin code for a single program   -->
+	<!--  change the value of the program property  -->
+	
+	<target name="gen-one">
+		<property name="program" value="Main.java"/>
+		<echo message="Generating jasmin for ${reference.dir}/${program}"/>
+		<antcall target="gen-jasmin">
+			<param name="filename.java" value="${reference.dir}/${program}"/>
+		</antcall>
+	</target>
+	
 	<!--=========================================-->
 	<!-- Parsing Targets                         -->
 	<!--=========================================-->	
@@ -188,7 +214,7 @@
 	<!-- compile and run a single program  -->
 	<!-- change the value of the program property -->
 	<target name="run-one">
-		<property name="program" value="nested.c" />
+		<property name="program" value="echo.c" />
 		<echo message="Compiling and running ${program}" />
 	    <antcall target="compile-and-run">
 	        <param name="filename.c" value="${test.dir}/${program}" />
