@@ -25,7 +25,7 @@ iload 0
 ldc 8
 imul
 ldc 3
-isub
+idiv
 ldc 1
 iadd
 istore 1
@@ -54,7 +54,7 @@ iload 0
 iload 1
 imul
 ldc 3
-isub
+idiv
 iload 0
 isub
 iload 1
@@ -71,7 +71,7 @@ return
 .limit locals 32
 iload 0
 ldc 10
-if_icmple Label1
+if_icmplt Label1
 iconst_0
 goto Label0
 Label1:
@@ -89,7 +89,7 @@ invokevirtual java/io/PrintStream/println(I)V
 IfLastLabel3:
 iload 0
 ldc 20
-if_icmplt Label5
+if_icmple Label5
 iconst_0
 goto Label4
 Label5:
@@ -188,7 +188,7 @@ Label24:
 ifeq IfFirstLabel26
 iload 0
 ldc 10
-if_icmple Label28
+if_icmplt Label28
 iconst_0
 goto Label27
 Label28:
@@ -242,7 +242,7 @@ istore 2
 WhileFirstLabel36:
 iload 4
 iload 0
-if_icmple Label38
+if_icmplt Label38
 iconst_0
 goto Label37
 Label38:
@@ -308,7 +308,7 @@ istore 2
 WhileFirstLabel44:
 iload 1
 ldc 10
-if_icmple Label46
+if_icmplt Label46
 iconst_0
 goto Label45
 Label46:

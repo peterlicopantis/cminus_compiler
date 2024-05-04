@@ -21,7 +21,7 @@ istore 3
 WhileFirstLabel0:
 iload 3
 iload 2
-if_icmple Label2
+if_icmplt Label2
 iconst_0
 goto Label1
 Label2:
@@ -32,7 +32,7 @@ aload 0
 iload 3
 iaload
 iload 4
-if_icmple Label5
+if_icmplt Label5
 iconst_0
 goto Label4
 Label5:
@@ -70,7 +70,7 @@ iload 3
 iload 2
 ldc 1
 isub
-if_icmple Label10
+if_icmplt Label10
 iconst_0
 goto Label9
 Label10:
@@ -115,7 +115,7 @@ istore 1
 WhileFirstLabel12:
 iload 1
 ldc 10
-if_icmple Label14
+if_icmplt Label14
 iconst_0
 goto Label13
 Label14:
@@ -143,7 +143,7 @@ istore 1
 WhileFirstLabel16:
 iload 1
 ldc 10
-if_icmple Label18
+if_icmplt Label18
 iconst_0
 goto Label17
 Label18:

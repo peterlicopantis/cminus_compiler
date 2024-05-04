@@ -24,7 +24,7 @@ iload 1
 iload 0
 iload 0
 iload 1
-isub
+idiv
 iload 1
 imul
 isub

@@ -789,7 +789,7 @@ class Yylex implements ParserTokens {
             // fall through
           case 40: break;
           case 9:
-            { yyparser.yylval = new ParserVal(SUBOP); return DIVOP;
+            { yyparser.yylval = new ParserVal(DIVOP); return DIVOP;
             }
             // fall through
           case 41: break;
@@ -806,7 +806,7 @@ class Yylex implements ParserTokens {
             // fall through
           case 43: break;
           case 12:
-            { yyparser.yylval = new ParserVal(LTE); return LT;
+            { yyparser.yylval = new ParserVal(LT); return LT;
             }
             // fall through
           case 44: break;
@@ -858,7 +858,7 @@ class Yylex implements ParserTokens {
             // fall through
           case 53: break;
           case 22:
-            { yyparser.yylval = new ParserVal(LT); return LTE;
+            { yyparser.yylval = new ParserVal(LTE); return LTE;
             }
             // fall through
           case 54: break;
