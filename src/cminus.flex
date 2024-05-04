@@ -68,16 +68,16 @@ multicomment = "/*"((\*+[^/*])|([^*]))*\**"*/"
 "input"				{ return INPUT; }
 
 "<="				{ yyparser.yylval = new ParserVal(LTE); return LTE; }
-"<"					{ yyparser.yylval = new ParserVal(LTE); return LT; }
-">="				{ yyparser.yylval = new ParserVal(LTE); return GTE; }
-">"					{ yyparser.yylval = new ParserVal(LTE); return GT; }
-"=="				{ yyparser.yylval = new ParserVal(LTE); return EQ; }
-"!="				{ yyparser.yylval = new ParserVal(LTE); return NOTEQ; }
+"<"					{ yyparser.yylval = new ParserVal(LT); return LT; }
+">="				{ yyparser.yylval = new ParserVal(GTE); return GTE; }
+">"					{ yyparser.yylval = new ParserVal(GT); return GT; }
+"=="				{ yyparser.yylval = new ParserVal(EQ); return EQ; }
+"!="				{ yyparser.yylval = new ParserVal(NOTEQ); return NOTEQ; }
 
 "+"					{ yyparser.yylval = new ParserVal(ADDOP); return ADDOP; }
 "-"					{ yyparser.yylval = new ParserVal(SUBOP); return SUBOP; }
 "*"					{ yyparser.yylval = new ParserVal(MULOP); return MULOP; }
-"/"					{ yyparser.yylval = new ParserVal(SUBOP); return DIVOP; }
+"/"					{ yyparser.yylval = new ParserVal(DIVOP); return DIVOP; }
 
 "="					{ return ASSIGN; }
 ";"					{ return SEMI; }
